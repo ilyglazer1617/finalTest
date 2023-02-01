@@ -29,6 +29,7 @@ jobRouter.put("/like", async (req, res) => {
   try {
     console.log(req.body);
     const job = await Job.findOne({ name: req.body.name });
+    //!populate
     // const job = await Job.findOne({ name: req.body.name })
     //   .populate("username")
     //   .exec((err, job) => {
