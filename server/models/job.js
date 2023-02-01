@@ -15,5 +15,12 @@ const JobSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  //! populate
+  // followers: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "User",
+  //   },
+  // ],
 });
 module.exports = mongoose.model("Job", JobSchema);

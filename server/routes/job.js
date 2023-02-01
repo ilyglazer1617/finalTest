@@ -29,6 +29,11 @@ jobRouter.put("/like", async (req, res) => {
   try {
     console.log(req.body);
     const job = await Job.findOne({ name: req.body.name });
+    // const job = await Job.findOne({ name: req.body.name })
+    //   .populate("username")
+    //   .exec((err, job) => {
+    //     if (err) return console.error(err);
+    //   });
     console.log(job);
     if (!job.followers.includes(req.body.username)) {
       await job.updateOne({ $push: { followers: req.body.username } });
